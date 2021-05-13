@@ -15,8 +15,11 @@ public class Datilografia {
         
         Butao b = new Butao("a");
         
+        QuadroNegro t1 = new QuadroNegro();
+        janela.add(t1.getQuadroNegro());
+
         janela.add(b.getButao());
-        
+                
         janela.setSize(1100, 800);
         janela.setLayout(null);
         janela.setLocationRelativeTo(null);  
