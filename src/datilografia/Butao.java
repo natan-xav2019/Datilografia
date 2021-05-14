@@ -1,25 +1,35 @@
 package datilografia;
 
 import javax.swing.*;
+import java.awt.Color;
 
 public class Butao {
     
     private int alturaButao;
     private int larguraButao;
+    private int posisaoEixoX;
+    private int posisaoEixoY;
+    
     private String textoButao;
+    
+    private final Color botaoCor = new Color(228,250,250);
+    private final Color botaoCorPrecionado = new Color(150,250,250);
     private final JButton botaoInterface = new JButton();
     
-    public Butao(String letra) {
-        setAlturaButao(50);
-        setLarguraButao(50);
+    public Butao(int posisaoEixoX,int posisaoEixoY,int larguraButao,int alturaButao,String letra) {
+        
+        setPosisaoEixoX(posisaoEixoX);
+        setPosisaoEixoY(posisaoEixoY);
+        setLarguraButao(larguraButao);
+        setAlturaButao(alturaButao);
         setLetraButao(letra);
         
-        botaoInterface.setBounds(200,400,getAlturaButao(),getLarguraButao());
-        
+        botaoInterface.setBounds(getPosisaoEixoX(), getPosisaoEixoY(), getLarguraButao(), getAlturaButao());
+        botaoInterface.setBackground(botaoCor);
     }
     
     private int getAlturaButao(){
-        return alturaButao;
+        return this.alturaButao;
     }
     
     private void setAlturaButao(int altura){
@@ -27,7 +37,7 @@ public class Butao {
     }
     
     private int getLarguraButao(){
-        return larguraButao;
+        return this.larguraButao;
     }
     
     private void setLarguraButao(int largura){
@@ -35,12 +45,28 @@ public class Butao {
     }
     
     private String getTextoButao(){
-        return textoButao;
+        return this.textoButao;
     }
     
     private void setLetraButao(String letra){
         this.textoButao = letra;
         botaoInterface.setText(getTextoButao());
+    }
+    
+    private int getPosisaoEixoX() {
+        return this.posisaoEixoX; 
+    }
+    
+    private void setPosisaoEixoX(int posisaoX) {
+         this.posisaoEixoX = posisaoX;
+    }
+    
+    private int getPosisaoEixoY() {
+        return this.posisaoEixoY; 
+    }
+    
+    private void setPosisaoEixoY(int posisaoY) {
+         this.posisaoEixoY = posisaoY;
     }
     
     public JButton getButao(){
