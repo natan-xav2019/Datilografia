@@ -1,6 +1,7 @@
 package datilografia;
 
 import javax.swing.*;
+import java.awt.Color;
 
 public class Butao {
     
@@ -8,7 +9,11 @@ public class Butao {
     private int larguraButao;
     private int posisaoEixoX;
     private int posisaoEixoY;
+    
     private String textoButao;
+    
+    private final Color botaoCor = new Color(228,250,250);
+    private final Color botaoCorPrecionado = new Color(150,250,250);
     private final JButton botaoInterface = new JButton();
     
     public Butao(int posisaoEixoX,int posisaoEixoY,int larguraButao,int alturaButao,String letra) {
@@ -20,7 +25,7 @@ public class Butao {
         setLetraButao(letra);
         
         botaoInterface.setBounds(getPosisaoEixoX(), getPosisaoEixoY(), getLarguraButao(), getAlturaButao());
-        
+        botaoInterface.setBackground(botaoCor);
     }
     
     private int getAlturaButao(){
