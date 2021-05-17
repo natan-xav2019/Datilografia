@@ -13,15 +13,22 @@ import java.awt.event.*;
  * @author natan
  */
 public class QuadroNegro {
-    
+
     private final JTextArea tela = new JTextArea();
-    
+
     public QuadroNegro() { //Contrutor do QuadroNegro
-        tela.setBounds(40,80,1000,200);
+        tela.setBounds(40, 80, 1000, 200);
     }
-    
+
     public JTextArea getQuadroNegro() { //Aqui retornamos o tamanho do quadro
         return tela;
     }
     
+    //Possivelmente podemos usar aqui um método para mostrar os pangramas
+    
+    //Possivelmente podemos usar aqui um método para controlar a escrita do usuário
+    //Se está correta ou errada
+    
+    //Podemos ainda adicionar o nível de precisão da escrita dele
+
 }
