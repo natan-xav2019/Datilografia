@@ -3,20 +3,20 @@ package datilografia;
 import javax.swing.*;
 import java.awt.Color;
 
-public class Butao {
+public class Botao {
     
-    private int alturaButao;
-    private int larguraButao;
+    private int alturaBotao;
+    private int larguraBotao;
     private int posisaoEixoX;
     private int posisaoEixoY;
     
-    private String textoButao;
+    private String textoBotao;
     
     private final Color botaoCor = new Color(228,250,250);
     private final Color botaoCorPrecionado = new Color(150,250,250);
     private final JButton botaoInterface = new JButton();
     
-    public Butao(int posisaoEixoX,int posisaoEixoY,int larguraButao,int alturaButao,String letra) {
+    public Botao(int posisaoEixoX,int posisaoEixoY,int larguraButao,int alturaButao,String letra) {
         
         setPosisaoEixoX(posisaoEixoX);
         setPosisaoEixoY(posisaoEixoY);
@@ -29,27 +29,27 @@ public class Butao {
     }
     
     private int getAlturaButao(){
-        return this.alturaButao;
+        return this.alturaBotao;
     }
     
     private void setAlturaButao(int altura){
-        this.alturaButao = altura;
+        this.alturaBotao = altura;
     }
     
     private int getLarguraButao(){
-        return this.larguraButao;
+        return this.larguraBotao;
     }
     
     private void setLarguraButao(int largura){
-        this.larguraButao = largura;
+        this.larguraBotao = largura;
     }
     
     private String getTextoButao(){
-        return this.textoButao;
+        return this.textoBotao;
     }
     
     private void setLetraButao(String letra){
-        this.textoButao = letra;
+        this.textoBotao = letra;
         botaoInterface.setText(getTextoButao());
     }
     

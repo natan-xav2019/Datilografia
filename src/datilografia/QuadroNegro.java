@@ -16,11 +16,11 @@ public class QuadroNegro {
     
     private final JTextArea tela = new JTextArea();
     
-    public QuadroNegro() {
+    public QuadroNegro() { //Contrutor do QuadroNegro
         tela.setBounds(40,80,1000,200);
     }
     
-    public JTextArea getQuadroNegro() {
+    public JTextArea getQuadroNegro() { //Aqui retornamos o tamanho do quadro
         return tela;
     }
     

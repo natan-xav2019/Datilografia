@@ -1,6 +1,6 @@
 /*
-Alunos: Natan Xavier de Siqueira, Daniel ...
-Materia: 2019200079
+Alunos: Natan Xavier de Siqueira, Daniel da Silva Henrique
+Materia: 2019200079, 2019200296
 */ 
 package datilografia;
 
@@ -13,7 +13,7 @@ public class Datilografia {
         
         JFrame janela = new JFrame("Datilografia");
         
-        Butao b = new Butao(200,400,50,50,"a");//sintaquise do butao(posição na tela x,posição na tela y, tamanho do butao x,tamanho do butao y, conteudo do botao );
+        Botao b = new Botao(200,400,50,50,"a");//sintaxe do butao(posição na tela x,posição na tela y, tamanho do butao x,tamanho do butao y, conteudo do botao );
         
         QuadroNegro t1 = new QuadroNegro();
         janela.add(t1.getQuadroNegro());

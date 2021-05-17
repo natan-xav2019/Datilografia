@@ -1,0 +1,4 @@
+IDEIA: 
+
+ -> Fazer uma classe para aclopar todos os componentes e inicializar o quadro
+	Exemplo: Ter uma classe chamada Tela ou TelaInteira, para nela ter os componentes de quadro e botão
