@@ -1,7 +1,6 @@
 //Quantidade de teclas 14+14+13+12+4 = 57
 package datilografia;
 
-import java.awt.Container;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,23 +8,28 @@ import java.util.ArrayList;
 
 public class Teclado {
     //Primeiramente precisamos de Jframe. Depois vamos precisar de um container e depois o FlowLayout.
-    ArrayList<JButton> botoes = new ArrayList<JButton>();
+    ArrayList<JButton> botoes = new ArrayList<>();
     
-    public Teclado() {
-        
-    }
     
-    public void criarTeclado(){
-        JFrame tela = new JFrame();
-        Container caixa = tela.getContentPane();
+    public void criarTeclado(JFrame jframe){
+        jframe = new JFrame();
+        jframe.setLayout(new FlowLayout());
         
-        caixa.setLayout(new FlowLayout());
+        String textoBotao;
         
-        for (int indice = 0; indice < 10; indice++) {
-            botoes.add(new JButton());
-            caixa.add(botoes.get(indice));
+        for (int indice = 'a'; indice <= 'z'; indice++) {
+            textoBotao = Integer.toString(indice);
+            botoes.add(new JButton(textoBotao));
         }
         
-       
+        for (JButton botao : botoes){
+            jframe.add(botao);
+        }
+        
     }
+
+    public ArrayList<JButton> getBotoes() {
+        return botoes;
+    }
+    
 }
