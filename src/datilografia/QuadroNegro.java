@@ -20,7 +20,7 @@ public class QuadroNegro {
         tela.setBounds(40, 80, 1000, 200);
     }
 
-    public JTextArea getQuadroNegro() { //Aqui retornamos o tamanho do quadro
+    public JTextArea getQuadroNegro() { //Aqui retornamos o Objeto tela
         return tela;
     }
     
