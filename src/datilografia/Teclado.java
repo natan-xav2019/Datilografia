@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Teclado {
     //Primeiramente precisamos de Jframe. Depois vamos precisar de um container e depois o FlowLayout.
     ArrayList<JButton> botoes = new ArrayList<>();
-    private char alfabeto = 'a';
+    private char alfabeto = 'A';
     
     public void criarTeclado(JFrame jframe){
         jframe = new JFrame();
@@ -17,10 +17,10 @@ public class Teclado {
         
         String textoBotao;
         
-        for (int indice = 0, alfabeto ='a' ; indice < 26; indice++) {
+        for (int indice = 0 ; indice < 26; indice++) {
             
             textoBotao = Integer.toString(indice);
-            botoes.add(new JButton( Character.toString(alfabeto++) ) );
+            botoes.add(new JButton( Character.toString(this.alfabeto++) ) );
         }
         
         /*for (JButton botao : botoes){
