@@ -5,27 +5,27 @@
  */
 package datilografia;
 
+import java.awt.FlowLayout;
 import javax.swing.*;
 
 public class Janela{
     
-    private final JFrame tela = new JFrame();
-    
-    public Janela(){
-        tela.setSize(1100, 800);
-        tela.setLayout(null);
-        tela.setLocationRelativeTo(null);
-        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tela.setVisible(true);
+    private JFrame tela = new JFrame("");
+    private String nome;
+ 
+    public Janela(String nome){//Nao consegui passar o JFrame
+        tela.setTitle(nome);
     }
-
-    
-    
-    public void inserirTitulo(JButton botao){
         
+    public JFrame getJanela(){
+        return tela;
     }
     
-    public void inserirTexto(JTextArea texto){
-        tela.add(texto);
+    public void painel(){
+       tela.setSize(1100, 800);
+       tela.setLayout(new FlowLayout());
+       tela.setLocationRelativeTo(null);
+       tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       tela.setVisible(true);
     }
 }
