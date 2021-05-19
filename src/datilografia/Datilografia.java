@@ -11,15 +11,13 @@ public class Datilografia {
 
     public static void main(String[] args) {
 
-        // Como está escrito no documento, to pensando transformar tudo isso em uma classe
-        // Para que possamos gerenciar isso melhor sem deixar o main bagunçado
         JFrame janela = new JFrame("Datilografia");
         Teclado teclado = new Teclado();
 
         QuadroNegro t1 = new QuadroNegro();
         janela.add(t1.getQuadroNegro());
 
-        teclado.criarTeclado(janela);
+        teclado.criarTeclado();
 
         for (JButton botoes : teclado.getBotoes()) {
             janela.add(botoes);
