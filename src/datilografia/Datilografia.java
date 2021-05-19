@@ -11,24 +11,26 @@ public class Datilografia {
 
     public static void main(String[] args) {
 
-        JFrame janela = new JFrame("Datilografia");
+        
+        Janela janela = new Janela("Datilografia");        
+
         Teclado teclado = new Teclado();
 
         QuadroNegro t1 = new QuadroNegro();
-        janela.add(t1.getQuadroNegro());
+        
+        
+        janela.getJanela().add(t1.getQuadroNegro());
 
-        teclado.criarTeclado();
+
+        teclado.criarTeclado(janela.getJanela());
+
 
         for (JButton botoes : teclado.getBotoes()) {
-            janela.add(botoes);
+            janela.getJanela().add(botoes);
 
         }
-
-        janela.setSize(1100, 800);
-        janela.setLayout(new FlowLayout());
-        janela.setLocationRelativeTo(null);//Com a possição relativa sendo null nao precisamos colotar posição relativa nos elementos 
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        janela.setVisible(true);
+        
+        janela.painel();
     }
 
 }
