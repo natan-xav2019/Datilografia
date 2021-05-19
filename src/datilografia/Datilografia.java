@@ -10,9 +10,10 @@ import javax.swing.*;
 public class Datilografia {
 
     public static void main(String[] args) {
+
         
-        Janela janela = new Janela("Datilografia");
-        
+        Janela janela = new Janela("Datilografia");        
+
         Teclado teclado = new Teclado();
 
         QuadroNegro t1 = new QuadroNegro();
@@ -20,7 +21,9 @@ public class Datilografia {
         
         janela.getJanela().add(t1.getQuadroNegro());
 
+
         teclado.criarTeclado(janela.getJanela());
+
 
         for (JButton botoes : teclado.getBotoes()) {
             janela.getJanela().add(botoes);

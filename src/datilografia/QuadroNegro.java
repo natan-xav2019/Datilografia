@@ -6,7 +6,6 @@
 package datilografia;
 
 import javax.swing.JTextArea;
-import java.awt.event.*;
 
 /**
  *
