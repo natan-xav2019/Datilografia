@@ -7,10 +7,6 @@ package datilografia;
 
 import javax.swing.JTextArea;
 
-/**
- *
- * @author natan
- */
 public class QuadroNegro {
 
     private final JTextArea tela = new JTextArea();
@@ -22,12 +18,9 @@ public class QuadroNegro {
     public JTextArea getQuadroNegro() { //Aqui retornamos o Objeto tela
         return tela;
     }
-    
+
     //Possivelmente podemos usar aqui um método para mostrar os pangramas
-    
     //Possivelmente podemos usar aqui um método para controlar a escrita do usuário
     //Se está correta ou errada
-    
     //Podemos ainda adicionar o nível de precisão da escrita dele
-
 }
