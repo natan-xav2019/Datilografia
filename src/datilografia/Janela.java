@@ -5,27 +5,26 @@
  */
 package datilografia;
 
-import java.awt.FlowLayout;
+//import java.awt.FlowLayout;
 import javax.swing.*;
 
-public class Janela{
-    
-    private JFrame tela = new JFrame("");
-    private String nome;
- 
-    public Janela(String nome){//Nao consegui passar o JFrame
+public class Janela {
+
+    private final JFrame tela = new JFrame();
+
+    public Janela(String nome) {//Nao consegui passar o JFrame
         tela.setTitle(nome);
     }
-        
-    public JFrame getJanela(){
+
+    public JFrame getJanela() {
         return tela;
     }
-    
-    public void painel(){
-       tela.setSize(1100, 800);
-       tela.setLayout(new FlowLayout());
-       tela.setLocationRelativeTo(null);
-       tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       tela.setVisible(true);
+
+    public void painel() {
+        tela.setSize(1100, 800);
+        //tela.setLayout(new FlowLayout());
+        tela.setLocationRelativeTo(null);
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tela.setVisible(true);
     }
 }
