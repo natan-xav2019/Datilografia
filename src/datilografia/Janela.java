@@ -5,26 +5,25 @@
  */
 package datilografia;
 
-//import java.awt.FlowLayout;
 import javax.swing.*;
 
 public class Janela {
 
     private final JFrame tela = new JFrame();
 
-    public Janela(String nome) {//Nao consegui passar o JFrame
-        tela.setTitle(nome);
+    public Janela(String nome) {// Costrutor Janeça
+        tela.setTitle(nome);// alterando o nome do cabeçario 
     }
 
-    public JFrame getJanela() {
+    public JFrame getJanela() { // retorna o Jframe tela
         return tela;
     }
 
     public void painel() {
         tela.setSize(1100, 800);
-        //tela.setLayout(new FlowLayout());
-        tela.setLocationRelativeTo(null);
-        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tela.setVisible(true);
+        tela.setResizable(false);//nao deixa a pessoa almentar a dimensão da tela.
+        tela.setLocationRelativeTo(null);//deixa a janela no meio da tela
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// finaliza a execução do programa no X
+        tela.setVisible(true); // visibilidade disponivel
     }
 }
