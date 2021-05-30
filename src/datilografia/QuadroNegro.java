@@ -1,29 +1,58 @@
 package datilografia;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.awt.event.*;
 
-public class QuadroNegro {
+
+public class QuadroNegro implements KeyListener{
 
     private final JPanel painel = new JPanel();
     private final JTextArea quadro = new JTextArea();
-   // private final ArrayList<String> pangrama = new ArrayList<>();
+    private final JScrollPane area = new JScrollPane(quadro);
 
     public QuadroNegro() { //Contrutor do QuadroNegro
-        //quadro.setPreferredSize(new Dimension(500, 300));
         quadro.setLineWrap(true); //Faz a quebra de linha 
-        //quadro.setWrapStyleWord(true); AINDA NÃO SEI O QUE FAZ DIREITO, MAS VAMOS TESTANDO
-
-        //Ha Função de definir linhas e colunas, o que acha de botarmos ela?
+        quadro.addKeyListener(this);
         
         //quadro.setText(pangrama.get(0)); //Teste de como funcionaria os pangramas na tela
         painel.setLayout(new BorderLayout());
-        painel.add(quadro);
+        painel.add(area);
     }
 
     public JPanel getQuadroNegro() { //Aqui retornamos o Objeto JTextArea Tela
         return painel;
+    }
+
+    public void submeterUmaFrase(KeyEvent e){
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            //Aqui tem que fazer com que a frase seja submetida
+            //acho que vou precisar fazer uma string e nela guardar a informação
+            
+           
+            //Outro modo é usar propriedades de documento
+            // Outro modo para tentar resolver é usando text field
+            // Outro modo ainda é tentando percorrer toda string e pegar onde tem o "\n"
+        }   
+    }
+    
+    @Override
+    public void keyTyped(KeyEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        submeterUmaFrase(e);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        submeterUmaFrase(e);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        submeterUmaFrase(e);
     }
 }
