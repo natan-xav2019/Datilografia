@@ -20,7 +20,7 @@ public class Janela {
     }
 
     public void painel() {
-        tela.setSize(1100, 800);
+        tela.setSize(1025, 700); // define o tamanho da tela, tava pensando em sei la, achar um método para colocar do tamanho legal para cada tela
         tela.setResizable(false);//nao deixa a pessoa almentar a dimensão da tela.
         tela.setLocationRelativeTo(null);//deixa a janela no meio da tela
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// finaliza a execução do programa no X
