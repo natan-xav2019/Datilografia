@@ -5,7 +5,6 @@ Materia: 2019200079, 2019200296
 package datilografia;
 
 import java.awt.BorderLayout;
-//import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Datilografia {
@@ -25,6 +24,7 @@ public class Datilografia {
         painel.add(teclado.getPainel(), BorderLayout.PAGE_END);
 
         janela.getJanela().add(painel);
+        
         
         javax.swing.SwingUtilities.invokeLater(() -> {
             janela.painel();
