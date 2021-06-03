@@ -11,6 +11,7 @@ public class EventosDatilografia implements KeyListener {
     private final Pangrama pangrama;
     private String letra;
     private final ArrayList<String> frases = new ArrayList<String>();
+
     private int index = 0;
 
     public EventosDatilografia(Teclado tecla, QuadroNegro quadroNegro, Pangrama pangrama) {
@@ -23,16 +24,20 @@ public class EventosDatilografia implements KeyListener {
     public void pegarLetra(KeyEvent e){
         this.letra = String.valueOf(e.getKeyChar());
         this.letra = this.letra.toUpperCase();
+
     }
     
     @Override
     public void keyTyped(KeyEvent e) {
+
         System.out.println("letra presionada: " + this.letra);
         trocaDeCorComPressao(teclado, this.letra);
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
+
         pegarLetra(e);
         trocaDeCorSemPressao(teclado, this.letra);
         if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
@@ -42,6 +47,7 @@ public class EventosDatilografia implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+
         pegarLetra(e);
         trocaDeCorSemPressao(teclado, this.letra);
         if (e.getKeyChar() == KeyEvent.VK_ENTER) {
@@ -59,6 +65,8 @@ public class EventosDatilografia implements KeyListener {
             } else {
                 System.out.println("são Diferentes!!!");
             }
+            p.proximaPergunta();
+                indice++;
         }
     }
 
