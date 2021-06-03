@@ -25,7 +25,7 @@ public class Pangrama {
         painel.setLayout(new BorderLayout());
         
         
-        pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse");
+        pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse\n");
         pangrama.add("The quick brown fox jumps over de lazy dog");
         pangrama.add("Quick wafting zephyrs vex bold Jim");
         
@@ -50,6 +50,10 @@ public class Pangrama {
     
     public JPanel getPangrama(){
         return painel;
+    }
+    
+    public ArrayList<String> getFrase(){
+        return pangrama;
     }
     
     public void proximaPergunta(){

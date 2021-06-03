@@ -17,8 +17,9 @@ public class Datilografia {
         Teclado teclado = new Teclado();
         QuadroNegro quadroNegro = new QuadroNegro();
         
-        EventosDatilografia Evento = new EventosDatilografia(teclado);
-
+        EventosDatilografia Evento = new EventosDatilografia(teclado,quadroNegro,pangrama);
+        
+        quadroNegro.getJTextArea().addKeyListener( Evento );
             
         painel.setLayout(new BorderLayout());
         
@@ -28,7 +29,7 @@ public class Datilografia {
 
         janela.getJanela().add(painel);
         
-        quadroNegro.getJTextArea().addKeyListener( Evento );
+        
         
         javax.swing.SwingUtilities.invokeLater(() -> {
             janela.painel();
