@@ -11,8 +11,8 @@ public class Teclado {
 
     private final ArrayList<JButton> botoes = new ArrayList<>(); //Agora fiquei em dúvida, pode ser que a gente tenha que usar uma classe botão mesmo
     private final JPanel painel = new JPanel();
-    private final Color cor = new Color(228,250,250);
-    private final Color corPresionado = new Color(150,250,250);
+    private final Color cor = new Color(228, 250, 250);
+    private final Color corPresionado = new Color(150, 250, 250);
 
     private int indice = 0;
 
@@ -22,25 +22,21 @@ public class Teclado {
         painel.setPreferredSize(new Dimension(500, 500));//dimensao do painel
 
         declararTeclas();
-        
         configuraTamanhoBotao();
-        
         adicionarBotaoTeclado();
-        
-        AdicionarCorBotaoTodos();
-        
-        
+        adicionarCorBotaoTodos();
+
     }
 
     public JPanel getTeclado() {//pegar painel
         return painel;
     }
-    
+
     public ArrayList getBotoes() {//pegar painel
         return botoes;
     }
-    
-    private void declararTeclas(){
+
+    private void declararTeclas() {
         botoes.add(new JButton("Q"));
         botoes.add(new JButton("W"));
         botoes.add(new JButton("E"));
@@ -71,34 +67,32 @@ public class Teclado {
         botoes.add(new JButton("Enter"));
     }
 
-    private void configuraTamanhoBotao(){    
-        for(indice = 0; indice < 26; indice++){
+    private void configuraTamanhoBotao() {
+        for (indice = 0; indice < 26; indice++) {
             botoes.get(indice).setPreferredSize(new Dimension(50, 40));
         }
         botoes.get(26).setPreferredSize(new Dimension(250, 40));
         botoes.get(27).setPreferredSize(new Dimension(150, 70));
     }
-    
-    private void AdicionarCorBotaoTodos(){
+
+    private void adicionarCorBotaoTodos() {
         for (JButton botao : botoes) { //adicionando cor
             botao.setBackground(cor);
         }
     }
-    
+
     public void adicionarCorBotao(int index) {
         botoes.get(index).setBackground(cor);
     }
-    
+
     public void adicionarCorBotaoPreção(int index) {
         botoes.get(index).setBackground(corPresionado);
     }
-    
-    private void adicionarBotaoTeclado(){
+
+    private void adicionarBotaoTeclado() {
         for (JButton botao : botoes) { //adiciona os botoes no painel
             painel.add(botao);
         }
     }
-    
-    
-}
 
+}
