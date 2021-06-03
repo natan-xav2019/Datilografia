@@ -1,6 +1,7 @@
 package datilografia;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -19,28 +20,19 @@ public class Pangrama {
     
     public Pangrama(){
         painel.setLayout(new BorderLayout());
-        
+        pergunta.setFont(new Font("Ariel",Font.PLAIN,30));
         
         pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse\n");
-        pangrama.add("The quick brown fox jumps over de lazy dog");
-        pangrama.add("Quick wafting zephyrs vex bold Jim");
-        
-        painel.add(Instrusao);
+        pangrama.add("The quick brown fox jumps over de lazy dog\n");
+        pangrama.add("Quick wafting zephyrs vex bold Jim\n");
+       
         painel.add(getPergunta());
-
 
     }
 
-    //Aqui a gente pode fazer um método para colocar os pangramas nesse arraylist
-    //Também podemos fazer aqui um método para comparar se está certo ou não 
-
-
     private JLabel getPergunta() {
-        //pode se colocar sempre na mesma ordem assim a nossa organização fica mais facil para a correção das mesmas frazes pois os idices seram os mesmo
-        pergunta.setText(pangrama.get(indise));
         
-        //a cada chamada o index pode somar 1 botei numa função que se quiser incrementar algo e so mudar ela
-        proximaPergunta();
+        pergunta.setText(pangrama.get(indise));
         
         return pergunta;
     }
@@ -55,4 +47,6 @@ public class Pangrama {
     
     public void proximaPergunta(){
         indise++;
+        pergunta.setText(pangrama.get(indise));
+    }
 }

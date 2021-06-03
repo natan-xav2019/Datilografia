@@ -12,7 +12,8 @@ public class EventosDatilografia implements KeyListener{
     private Pangrama p;
     private String letra = null;
     private final ArrayList<String> frases = new ArrayList<String>();
-    private int PrimeiraVez = 0; 
+    private int indice = 0;
+    private int 
    
     public EventosDatilografia(Teclado t,QuadroNegro q, Pangrama p){
        this.t = t;
@@ -22,9 +23,6 @@ public class EventosDatilografia implements KeyListener{
         
     @Override
     public void keyTyped(KeyEvent e) {
-        
-            this.letra = String.valueOf(e.getKeyChar());
-            
             System.out.println("letra presionada: " + this.letra);
             
             this.letra = this.letra.toUpperCase();
@@ -33,6 +31,8 @@ public class EventosDatilografia implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
+        this.letra = String.valueOf(e.getKeyChar());
+        
         trocaDeCorSemPreçao(t,this.letra.toUpperCase());
         if(e.getKeyChar() == KeyEvent.VK_BACK_SPACE){
                 System.out.println("apagou"); //Apagou
@@ -41,23 +41,23 @@ public class EventosDatilografia implements KeyListener{
 
     @Override
     public void keyReleased(KeyEvent e) {
+        this.letra = String.valueOf(e.getKeyChar());
+        
         trocaDeCorSemPreçao(t,this.letra.toUpperCase());
         if(e.getKeyChar() == KeyEvent.VK_ENTER){
-                System.out.println("Enviando fraze"); //Colocar aqui a funçao que ira pegar a faze digita pelo usuario.
                 
                 frases.add(q.getJTextArea().getText());
                 
                 q.getJTextArea().setText("");
-                  
-                System.out.println("palavra completa: " + p.getFrase().get(0) );
-                System.out.println("palavra completa: " + frases.get(0));
                 
-                if(p.getFrase().get(0).equals(frases.get(0))){
+                if(p.getFrase().get(indice).equals(frases.get(indice))){
                     System.out.println("são iguais!!!");
                 }
                 else {
                     System.out.println("são Diferentes!!!");
                 }
+                p.proximaPergunta();
+                indice++;
         }
     }
     

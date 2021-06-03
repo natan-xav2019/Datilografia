@@ -1,6 +1,7 @@
 package datilografia;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -18,16 +19,14 @@ public class QuadroNegro{
 
     public QuadroNegro() { //Contrutor do QuadroNegro
         quadro.setLineWrap(true); //Faz a quebra de linha 
-              
-        //System.out.println(quadro.getText());  //Teste de como pegar o texto que esta escrito na tela
-
+        quadro.setFont(new Font("Ariel",Font.PLAIN,16));
+        
         painel.setLayout(new BorderLayout());
         painel.add(area);
         
-        //não esta aceitando funções publicas
     }
     
-    public JPanel getQuadroNegro() { //Aqui retornamos o Objeto JTextArea Tela
+    public JPanel getQuadroNegro() {
         return painel;
     }
 
