@@ -11,7 +11,7 @@ public class Janela {
 
     private final JFrame tela = new JFrame();
 
-    public Janela(String nome) {// Costrutor Janeça
+    public Janela(String nome) {// Costrutor Janela
         tela.setTitle(nome);// alterando o nome do cabeçario 
     }
 
