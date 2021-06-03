@@ -29,8 +29,6 @@ public class Datilografia {
 
         janela.getJanela().add(painel);
         
-        
-        
         javax.swing.SwingUtilities.invokeLater(() -> {
             janela.painel();
         });
