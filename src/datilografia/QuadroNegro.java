@@ -1,7 +1,6 @@
 package datilografia;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,7 +14,7 @@ public class QuadroNegro {
 
     public QuadroNegro() { //Contrutor do QuadroNegro
         quadro.setLineWrap(true); //Faz a quebra de linha 
-        quadro.setFont(new Font("Ariel",Font.PLAIN,16));
+        quadro.setFont(new Font("Ariel",Font.PLAIN,18));
        
         painel.setLayout(new BorderLayout());
         painel.add(area);

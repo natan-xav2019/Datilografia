@@ -10,7 +10,6 @@ public class Pangrama {
     private final JPanel painel = new JPanel();
 
     private final JLabel pergunta = new JLabel();
-    private final JLabel instrucao = new JLabel("Instrução de como funciona");
     private final ArrayList<String> pangrama = new ArrayList<String>();
 
     private int indice = 0;
@@ -21,7 +20,7 @@ public class Pangrama {
         pergunta.setFont(new Font("Ariel", Font.PLAIN, 30));
 
         pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse\n");
-        pangrama.add("The quick brown fox jumps over de lazy dog\n");
+        pangrama.add("The quick brown fox jumps over the lazy dog\n");
         pangrama.add("Quick wafting zephyrs vex bold Jim\n");
 
         painel.add(getPergunta());
@@ -45,7 +44,7 @@ public class Pangrama {
 
     public void proximaPergunta() {
         if (indice > pangrama.size()) {
-            throw new ArrayIndexOutOfBoundsException("Esta´fora do limite");
+            throw new ArrayIndexOutOfBoundsException("Está fora do limite");
         } 
         else {
             indice++;

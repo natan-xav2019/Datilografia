@@ -50,7 +50,7 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
         trocaDeCorSemPressao(teclado, this.letra);
 
         if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-            if (podeIrParaProximaQuestao == false) { // Serve para mostrar para controlar e mostrar o erro ou acerto do usuário
+            if ( podeIrParaProximaQuestao == false) { // Serve para mostrar para controlar e mostrar o erro ou acerto do usuário
                 System.out.println("Enviando frase"); //Colocar aqui a funçao que ira pegar a faze digita pelo usuario.
 
                 frases.add(quadroNegro.getJTextArea().getText());//lança a frase digitada no arrayList
@@ -67,10 +67,13 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
                 }
                 podeIrParaProximaQuestao = true;
             } else {
-                quadroNegro.getJTextArea().setText("");
-                pangrama.proximaPergunta();
-                indice++;
-                podeIrParaProximaQuestao = false;
+                if (podeIrParaProximaQuestao == true ) {
+                    quadroNegro.getJTextArea().setText("");
+                    pangrama.proximaPergunta();
+                    indice++;
+                    podeIrParaProximaQuestao = false;
+                }
+
             }
 
         }

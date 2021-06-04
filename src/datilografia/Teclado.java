@@ -23,8 +23,8 @@ public class Teclado {
 
     public Teclado() {
 
-        painel.setLayout(new GridLayout(6,0));//layout flexivel
-        painel.setPreferredSize(new Dimension(500, 350));//dimensao do painel
+        painel.setLayout(new GridLayout(4,0));//layout flexivel
+        painel.setPreferredSize(new Dimension(500, 300));//dimensao do painel
 
         declararTeclas();
         configuraTamanhoBotao();
@@ -75,7 +75,7 @@ public class Teclado {
     private void configuraTamanhoBotao() {
 
         for (indice = 0; indice < 26; indice++) {
-            botoes.get(indice).setPreferredSize(new Dimension(50,40));
+            botoes.get(indice).setPreferredSize(new Dimension(70,60));
             if (indice < 10) {
                 primeiraLinha.add(botoes.get(indice));
             } else {
@@ -91,8 +91,8 @@ public class Teclado {
         terceiraLinha.add(botoes.get(27));
         quartaLinha.add(botoes.get(26));
 
-        botoes.get(26).setPreferredSize(new Dimension(450, 40));
-        botoes.get(27).setPreferredSize(new Dimension(100, 40));
+        botoes.get(26).setPreferredSize(new Dimension(470, 60));
+        botoes.get(27).setPreferredSize(new Dimension(120, 60));
     }
 
     private void adicionarCorBotaoTodos() {

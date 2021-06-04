@@ -16,6 +16,7 @@ public class Datilografia {
         Pangrama pangrama = new Pangrama();
         Teclado teclado = new Teclado();
         QuadroNegro quadroNegro = new QuadroNegro();
+        Instrucoes intrucoes = new Instrucoes();
 
         EventosDatilografia Evento = new EventosDatilografia(teclado, quadroNegro, pangrama);
 
@@ -31,6 +32,7 @@ public class Datilografia {
 
         javax.swing.SwingUtilities.invokeLater(() -> {
             janela.painel();
+            intrucoes.janelaInstroducao();
         });
 
     }
