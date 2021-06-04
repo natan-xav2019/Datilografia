@@ -44,9 +44,13 @@ public class Pangrama {
     }
 
     public void proximaPergunta() {
-
-        indice++;
-        pergunta.setText(pangrama.get(indice));
+        if (indice > pangrama.size()) {
+            throw new ArrayIndexOutOfBoundsException("Esta´fora do limite");
+        } 
+        else {
+            indice++;
+            pergunta.setText(pangrama.get(indice));
+        }
 
     }
 }
