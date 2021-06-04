@@ -34,6 +34,7 @@ public class Instrucoes {
 
     public void janelaInstroducao() {
         instrucoes.setSize(600, 300); // define o tamanho da tela, tava pensando em sei la, achar um método para colocar do tamanho legal para cada tela
+        instrucoes.setResizable(false);
         instrucoes.setVisible(true);
         instrucoes.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//achado no https://stackoverflow.com/questions/14918395/kill-an-open-jframe
     }
