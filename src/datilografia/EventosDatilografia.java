@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JFrame;
 
 public class EventosDatilografia implements KeyListener { // Classe que controla os eventos
 
@@ -51,9 +52,9 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
         trocaDeCorSemPressao(this.teclado, this.letra);
 
 
-        if (e.getKeyChar() == KeyEvent.VK_ENTER && indice < pangrama.getFrase().size() ) {
+        if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+            
             if (podeIrParaProximaQuestao == false) { // Serve para mostrar para controlar e mostrar o erro ou acerto do usuário
-                
                 String Texto = "\tFrase " + contatorfraze++ + "\n\n";
                
                 String[] palavraUsuario = quadroNegro.getJTextArea().getText().split(" ");
@@ -65,29 +66,33 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
                 else
                     Texto+= "São Diferentes,Confira a baixo as palavras que você errou aperte enter para continuar quando acabar a consulta...\n\n";
                                 
-                System.out.println("Fase: " + pangrama.getFrase().get(indice));
                 for(int i = 0; i < palavraUsuario.length; i++) {
-                    if(palavraUsuario[i].equals(palavraSistema[i]) ){
+                    if(palavraUsuario[i].equals(palavraSistema[i]) )
                         Texto += "ACERTOU: " + palavraUsuario[i]+"\n";
-                    }
-                    else {
+                    else 
                         Texto += "ERROU: o que vc escreveu " + palavraUsuario[i] + " o que devia ter escrito " + palavraSistema[i] + "\n";
-                    }
-                }
+                }       
                 
                 quadroNegro.getJTextArea().setText(Texto);
+                
                 podeIrParaProximaQuestao = true;
-
             } 
             else {
-                
-                
-                podeIrParaProximaQuestao = false;
-                quadroNegro.getJTextArea().setText("");
-              
-              indice++;
-              pangrama.proximaPergunta(indice);
+                indice++;
+                if(indice < pangrama.getFrase().size()){
+                    podeIrParaProximaQuestao = false;
+                    pangrama.proximaPergunta(indice);
+                }
+                else{
+                     pangrama.getPergunta().setText("Fim do Programa se quiser ir novamente digite \"sim\"");
+                     if("sim\n".equals(quadroNegro.getJTextArea().getText())){
+                        indice = 0;
+                        podeIrParaProximaQuestao = false;
+                        pangrama.proximaPergunta(indice);
+                     }
 
+                }
+                quadroNegro.getJTextArea().setText("");
             }
         }
     }

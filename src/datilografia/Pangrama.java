@@ -20,14 +20,14 @@ public class Pangrama {
         pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse\n");
         pangrama.add("The quick brown fox jumps over the lazy dog\n");
         pangrama.add("Quick wafting zephyrs vex bold Jim\n");
-
-        painel.add(getPergunta());
+        
+        pergunta.setText(pangrama.get(0));
+        
+        painel.add(pergunta);
 
     }
 
-    private JLabel getPergunta() {
-
-        pergunta.setText(pangrama.get(0));
+    public JLabel getPergunta() {
 
         return pergunta;
     }
@@ -39,7 +39,6 @@ public class Pangrama {
     public ArrayList<String> getFrase() {
         return pangrama;
     }
-
 
     public void proximaPergunta(int indice) {
         pergunta.setText(pangrama.get(indice));
