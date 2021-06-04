@@ -50,6 +50,7 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
         pegarLetra(e);
         trocaDeCorSemPressao(this.teclado, this.letra);
 
+
         if (e.getKeyChar() == KeyEvent.VK_ENTER && indice < pangrama.getFrase().size() ) {
             if (podeIrParaProximaQuestao == false) { // Serve para mostrar para controlar e mostrar o erro ou acerto do usuário
                 
@@ -76,6 +77,7 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
                 
                 quadroNegro.getJTextArea().setText(Texto);
                 podeIrParaProximaQuestao = true;
+
             } 
             else {
                 
@@ -85,6 +87,7 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
               
               indice++;
               pangrama.proximaPergunta(indice);
+
             }
         }
     }

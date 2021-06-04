@@ -18,7 +18,7 @@ public class Pangrama {
         pergunta.setFont(new Font("Ariel", Font.PLAIN, 30));
         
         pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse\n");
-        pangrama.add("The quick brown fox jumps over de lazy dog\n");
+        pangrama.add("The quick brown fox jumps over the lazy dog\n");
         pangrama.add("Quick wafting zephyrs vex bold Jim\n");
 
         painel.add(getPergunta());
@@ -40,8 +40,8 @@ public class Pangrama {
         return pangrama;
     }
 
+
     public void proximaPergunta(int indice) {
         pergunta.setText(pangrama.get(indice));
-
     }
 }

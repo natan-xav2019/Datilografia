@@ -13,10 +13,9 @@ public class QuadroNegro {
     private final JScrollPane area = new JScrollPane(quadro);
 
     public QuadroNegro() { //Contrutor do QuadroNegro
-
         quadro.setLineWrap(true); //Faz a quebra de linha 
-        quadro.setFont(new Font("Ariel",Font.PLAIN,16));
-        
+        quadro.setFont(new Font("Ariel",Font.PLAIN,18));
+       
         painel.setLayout(new BorderLayout());
         painel.add(area);
         
