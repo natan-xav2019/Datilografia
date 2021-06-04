@@ -3,6 +3,7 @@ package datilografia;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class EventosDatilografia implements KeyListener { // Classe que controla os eventos
 
@@ -13,9 +14,10 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
     private String letra;
     private boolean podeIrParaProximaQuestao = false;
     private int indice = 0;
+    private int contatorfraze = 1;
 
-    public EventosDatilografia(Teclado tecla, QuadroNegro quadroNegro, Pangrama pangrama) {
-        this.teclado = tecla;
+    public EventosDatilografia(Teclado teclado, QuadroNegro quadroNegro, Pangrama pangrama) {
+        this.teclado = teclado;
         this.quadroNegro = quadroNegro;
         this.pangrama = pangrama;
     }
@@ -23,14 +25,16 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
     public void pegarLetra(KeyEvent e) {
         this.letra = String.valueOf(e.getKeyChar());
         this.letra = this.letra.toUpperCase();
-
+    }
+    
+    public void Resultado() {
+        
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
 
-        System.out.println("letra presionada: " + this.letra);
-        trocaDeCorComPressao(teclado, this.letra);
+        trocaDeCorComPressao(this.teclado, this.letra);
 
     }
 
@@ -38,46 +42,54 @@ public class EventosDatilografia implements KeyListener { // Classe que controla
     public void keyPressed(KeyEvent e) {
 
         pegarLetra(e);
-        trocaDeCorSemPressao(teclado, this.letra);
-        if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
-            System.out.println("Apagou");
-        }
+        trocaDeCorSemPressao(this.teclado, this.letra);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         pegarLetra(e);
-        trocaDeCorSemPressao(teclado, this.letra);
+        trocaDeCorSemPressao(this.teclado, this.letra);
 
-        if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-            if ( podeIrParaProximaQuestao == false) { // Serve para mostrar para controlar e mostrar o erro ou acerto do usuário
-                System.out.println("Enviando frase"); //Colocar aqui a funçao que ira pegar a faze digita pelo usuario.
 
-                frases.add(quadroNegro.getJTextArea().getText());//lança a frase digitada no arrayList
+        if (e.getKeyChar() == KeyEvent.VK_ENTER && indice < pangrama.getFrase().size() ) {
+            if (podeIrParaProximaQuestao == false) { // Serve para mostrar para controlar e mostrar o erro ou acerto do usuário
+                
+                String Texto = "\tFrase " + contatorfraze++ + "\n\n";
+               
+                String[] palavraUsuario = quadroNegro.getJTextArea().getText().split(" ");
+                String[] palavraSistema = pangrama.getFrase().get(indice).split(" ");
+                frases.add(quadroNegro.getJTextArea().getText());
 
-                quadroNegro.getJTextArea().setText("");
-
-                System.out.println("palavra completa: " + pangrama.getFrase().get(indice));
-                System.out.println("palavra completa: " + frases.get(indice));
-
-                if (pangrama.getFrase().get(indice).equals(frases.get(indice))) {
-                    quadroNegro.getJTextArea().setText("São Iguais, aperte enter para continuar...");
-                } else {
-                    quadroNegro.getJTextArea().setText("São Diferentes, aperte enter para continuar...");
+                if (pangrama.getFrase().get(indice).equals(frases.get(indice)))
+                    Texto+= "São Iguais, Confira a baixo as palavras que você acertou aperte enter para continuar quando acabar a consulta...\n\n";
+                else
+                    Texto+= "São Diferentes,Confira a baixo as palavras que você errou aperte enter para continuar quando acabar a consulta...\n\n";
+                                
+                System.out.println("Fase: " + pangrama.getFrase().get(indice));
+                for(int i = 0; i < palavraUsuario.length; i++) {
+                    if(palavraUsuario[i].equals(palavraSistema[i]) ){
+                        Texto += "ACERTOU: " + palavraUsuario[i]+"\n";
+                    }
+                    else {
+                        Texto += "ERROU: o que vc escreveu " + palavraUsuario[i] + " o que devia ter escrito " + palavraSistema[i] + "\n";
+                    }
                 }
+                
+                quadroNegro.getJTextArea().setText(Texto);
                 podeIrParaProximaQuestao = true;
-            } else {
-                if (podeIrParaProximaQuestao == true ) {
-                    quadroNegro.getJTextArea().setText("");
-                    pangrama.proximaPergunta();
-                    indice++;
-                    podeIrParaProximaQuestao = false;
-                }
+
+            } 
+            else {
+                
+                
+                podeIrParaProximaQuestao = false;
+                quadroNegro.getJTextArea().setText("");
+              
+              indice++;
+              pangrama.proximaPergunta(indice);
 
             }
-
         }
-
     }
 
     public void trocaDeCorComPressao(Teclado t, String l) {
