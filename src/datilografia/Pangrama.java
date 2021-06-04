@@ -10,16 +10,13 @@ public class Pangrama {
     private final JPanel painel = new JPanel();
 
     private final JLabel pergunta = new JLabel();
-    private final JLabel instrucao = new JLabel("Instrução de como funciona");
     private final ArrayList<String> pangrama = new ArrayList<String>();
-
-    private int indice = 0;
 
     public Pangrama() {
         painel.setLayout(new BorderLayout());
 
         pergunta.setFont(new Font("Ariel", Font.PLAIN, 30));
-
+        
         pangrama.add("Gazeta publica hoje breve anúncio de faxina na quermesse\n");
         pangrama.add("The quick brown fox jumps over de lazy dog\n");
         pangrama.add("Quick wafting zephyrs vex bold Jim\n");
@@ -30,7 +27,7 @@ public class Pangrama {
 
     private JLabel getPergunta() {
 
-        pergunta.setText(pangrama.get(indice));
+        pergunta.setText(pangrama.get(0));
 
         return pergunta;
     }
@@ -43,9 +40,7 @@ public class Pangrama {
         return pangrama;
     }
 
-    public void proximaPergunta() {
-
-        indice++;
+    public void proximaPergunta(int indice) {
         pergunta.setText(pangrama.get(indice));
 
     }
