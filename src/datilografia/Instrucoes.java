@@ -21,6 +21,7 @@ public class Instrucoes {
     public Instrucoes() {
         instrucoes.add(texto);
 
+        texto.setEditable(false);
         texto.setLineWrap(true);
         texto.setWrapStyleWord(true);
         texto.setFont(new Font("Arial", Font.PLAIN, 16));
